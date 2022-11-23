@@ -9,8 +9,8 @@ pipeline {
         }
         stage('build') {
             steps {
-              dir("/var/lib/jenkins/workspace/pipeline/spring-petclinic"){
-                sh './mvnw package'
+              //dir("/var/lib/jenkins/workspace/pipeline/spring-petclinic"){
+               // sh './mvnw package'
                 }
             }
         }
