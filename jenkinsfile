@@ -4,12 +4,15 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/shashirajraja/onlinebookstore.git'
+                git 'https://github.com/javaparser/javaparser-maven-sample.git'
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Building..'
+                sh 'mvn clean install'
+                
+                }
             }
         }
         stage('Deploy') {
