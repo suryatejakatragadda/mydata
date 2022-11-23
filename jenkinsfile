@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('clone') {
+        stage('checkout') {
             steps {
-            git 'https://github.com/shashirajraja/onlinebookstore.git'
+                git 'https://github.com/shashirajraja/onlinebookstore.git'
             }
         }
-        stage('build') {
+        stage('Test') {
             steps {
-              echo 'build....'
-                }
+                echo 'Testing..'
             }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
     }
+}
