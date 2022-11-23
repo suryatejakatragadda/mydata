@@ -8,9 +8,11 @@ pipeline {
             git 'https://github.com/spring-projects/spring-petclinic.git'
             }
         }
-        stage('Test') {
+        stage('build') {
             steps {
-                echo 'Testing..'
+              dir("/var/lib/jenkins/workspace/pipeline/spring-petclinic"){
+                sh './mvnw package'
+                }
             }
         }
         stage('Deploy') {
